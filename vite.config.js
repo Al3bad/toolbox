@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 
 function getHtmlEntryFiles(srcDir) {
   const entry = {};
+  entry["main"] = resolve(__dirname, "index.html");
 
   function traverseDir(currentDir) {
     const files = fs.readdirSync(currentDir);
