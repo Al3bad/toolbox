@@ -31,7 +31,7 @@ function getHtmlEntryFiles(srcDir) {
 }
 
 export default defineConfig({
-  base: "https://Al3bad.github.io/toolbox",
+  base: "https://Al3bad.github.io/toolbox/",
   build: {
     rollupOptions: {
       input: getHtmlEntryFiles("tools"),
