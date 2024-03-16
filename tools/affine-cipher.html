@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolbox</title>
+    <link rel="stylesheet" href="/global.css" asp-append-version="true" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Side navigation -->
+      <nav class="nav">
+        <div class="nav-top">
+          <div class="logo">
+            <a href="/">Toolbox</a>
+          </div>
+          <ul>
+            <li>
+              <a class="hoverable active" href="/tools/affine-cipher.html"
+                >Affine cipher</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-bottom">
+          <ul>
+            <a
+              class="icon-link hoverable"
+              href="https://github.com/Al3bad"
+              target="_blank"
+            >
+              GITHUB
+            </a>
+          </ul>
+        </div>
+      </nav>
+      <!-- Main content -->
+      <main class="main">
+        <div class="container">
+          <h1>Affine Cipher</h1>
+
+          <section>
+            <h2 class="mt-5 h2">Encryption</h2>
+
+            <div class="affine-cipher encrypt">
+              <form class="mb-3">
+                <div class="input-container">
+                  <label class="form-label" for="">Plaintext</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="plaintext"
+                    value=""
+                  />
+                </div>
+                <div class="input-container">
+                  <label class="form-label" for="">k_1</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="key1"
+                    value=""
+                  />
+                </div>
+                <div class="input-container">
+                  <label class="form-label" for="">k_2</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="key2"
+                    value=""
+                  />
+                </div>
+                <div class="">
+                  <button class="btn btn-primary" type="submit">Encrypt</button>
+                </div>
+              </form>
+              <div>
+                <label class="form-label" for="">Ciphertext</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="ciphertext"
+                  value=""
+                />
+              </div>
+            </div>
+          </section>
+          <hr />
+          <section>
+            <h2 class="mt-5 h2">Decryption</h2>
+            <div class="affine-cipher decrypt">
+              <form class="mb-3">
+                <div class="input-container">
+                  <label class="form-label" for="">Ciphertext</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="ciphertext"
+                    value=""
+                  />
+                </div>
+                <div class="input-container">
+                  <label class="form-label" for="">k_1</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="key1"
+                    value=""
+                  />
+                </div>
+                <div class="input-container">
+                  <label class="form-label" for="">k_2</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="key2"
+                    value=""
+                  />
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary" type="submit">Decrypt</button>
+                </div>
+              </form>
+              <div class="mb-3 result">
+                <label class="form-label" for="">Plaintext</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="plaintext"
+                  value=""
+                />
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <!-- Scripts -->
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/crypto/affine-cipher.ts"></script>
+  </body>
+</html>
