@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import path from "path";
 import fs from "fs";
+import handlebars from "vite-plugin-handlebars";
 import { defineConfig } from "vite";
 
 function getHtmlEntryFiles(srcDir) {
@@ -32,6 +33,14 @@ function getHtmlEntryFiles(srcDir) {
 
 export default defineConfig({
   base: "https://Al3bad.github.io/toolbox/",
+  plugins: [
+    handlebars({
+      partialDirectory: resolve(__dirname, "src/partials"),
+      context: {
+        repo: process.env.NODE_ENV === "production" ? "/toolbox" : "",
+      },
+    }),
+  ],
   build: {
     rollupOptions: {
       input: getHtmlEntryFiles("tools"),
