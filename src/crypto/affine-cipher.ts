@@ -1,6 +1,6 @@
-console.log("affine-cipher.ts");
+import { $ } from "./../main";
 
-const $ = document.querySelector.bind(document)!;
+console.log("affine-cipher.ts");
 
 const encryptFormEl: HTMLFormElement = $(".affine-cipher.encrypt form")!;
 const decryptFormEl: HTMLFormElement = $(".affine-cipher.decrypt form")!;

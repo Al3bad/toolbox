@@ -2,4 +2,5 @@
 
 # Tools
 
+- [x] Shift cipher - Encryption
 - [x] Affine cipher - Encryption/Decryption
