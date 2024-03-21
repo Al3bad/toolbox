@@ -347,6 +347,15 @@ a {
 .nav-top,
 .nav-bottom {
 }
+
+.nav-top .section-title {
+  display: block;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--grey-900);
+}
+
 .nav-top .logo {
   font-size: 2rem;
   font-weight: bold;
@@ -363,6 +372,10 @@ a {
   align-items: flex-start;
   gap: 1.4rem;
 }
+.nav ul:not(:last-child) {
+  margin-bottom: 3.2rem;
+}
+
 .nav ul .nav_item {
   font-size: 1.4rem;
 }
