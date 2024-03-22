@@ -2,26 +2,36 @@ import { $ } from "./../main";
 
 console.log("shift-cipher.ts");
 
-const encryptFormEl: HTMLFormElement = $(".shift-cipher.encrypt form")!;
+const encryptFormEl = $(".shift-cipher.encrypt form")! as HTMLFormElement;
 
 const onShiftEncrypt = (e: SubmitEvent) => {
   e.preventDefault();
 
-  const plaintextEl: HTMLInputElement = $(
+  const plaintextEl = $(
     ".shift-cipher.encrypt input[name=plaintext]",
-  )!;
-  const ciphertextEl: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const ciphertextEl = $(
     ".shift-cipher.encrypt input[name=ciphertext]",
-  )!;
-  const keyEl: HTMLInputElement = $(".shift-cipher.encrypt input[name=key]")!;
+  )! as HTMLInputElement;
+  const keyEl = $(".shift-cipher.encrypt input[name=key]")! as HTMLInputElement;
 
   // Extract values & parse them
   const key = parseInt(keyEl.value);
   const plaintext = plaintextEl.value.toUpperCase();
 
+  // TODO: validate user input
+  // ...
+
   plaintextEl.value = plaintext;
 
   // Perform encryption
+  const ciphertext = encrypt(key, plaintext);
+
+  // Set the value in frontend
+  ciphertextEl.value = ciphertext;
+};
+
+const encrypt = (key: number, plaintext: string) => {
   const start = "A".charCodeAt(0);
   const end = "Z".charCodeAt(0);
   const alphabetsRange = Math.abs(end - start + 1);
@@ -35,8 +45,7 @@ const onShiftEncrypt = (e: SubmitEvent) => {
     })
     .join("");
 
-  // Set the value in frontend
-  ciphertextEl.value = ciphertext;
+  return ciphertext;
 };
 
 encryptFormEl.addEventListener("submit", onShiftEncrypt);
