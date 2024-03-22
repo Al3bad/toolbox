@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> shared-head}}
+    <style>
+      .galois-field-calc .grid {
+        display: grid;
+        grid-template: auto auto auto / 92px 1fr;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    {{#> layout }}
+    <h1>Galois Field Calculator</h1>
+    <section>
+      <!-- <h2 class="mt-5 h2">Encryption</h2> -->
+      <div class="galois-field-calc">
+        <form class="mb-3">
+          <div class="input-container">
+            <label class="form-label" for="">A</label>
+            <input class="form-control" type="text" name="A" value="" />
+          </div>
+          <div class="input-container">
+            <label class="form-label" for="">B</label>
+            <input class="form-control" type="text" name="B" value="" />
+          </div>
+          <div class="input-container">
+            <label class="form-label" for="">Polynomial P(x)</label>
+            <select class="form-control" name="polynomial">
+              <option value="100011011">GF(2^8): P[x] = x8+x4+x3+x+1</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label class="form-label" for="">Operation</label>
+            <div>
+              <input
+                type="radio"
+                id="add"
+                name="operation"
+                value="add"
+                checked
+              />
+              <label for="add">A + B</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="subtract"
+                name="operation"
+                value="subtract"
+              />
+              <label for="subtract">A - B</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="multiply"
+                name="operation"
+                value="multiply"
+              />
+              <label for="multiply">A x B</label>
+            </div>
+            <div>
+              <input type="radio" id="divide" name="operation" value="divide" />
+              <label for="divide">A / B</label>
+            </div>
+          </div>
+          <div class="">
+            <button class="btn btn-primary" type="submit">Compute</button>
+          </div>
+        </form>
+        <div>
+          <h2 class="mt-5 h2">Result</h2>
+          <div class="grid">
+            <label>Decimal:</label>
+            <p class="result-dec">-</p>
+            <label>Hex:</label>
+            <p class="result-hex">-</p>
+            <label>Binary:</label>
+            <p class="result-binary">-</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {{/layout}}
+    <!-- Scripts -->
+    <script type="module" src="/src/calcs/galois-field-calc.ts"></script>
+  </body>
+</html>
