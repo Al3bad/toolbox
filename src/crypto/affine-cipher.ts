@@ -2,24 +2,24 @@ import { $ } from "./../main";
 
 console.log("affine-cipher.ts");
 
-const encryptFormEl: HTMLFormElement = $(".affine-cipher.encrypt form")!;
-const decryptFormEl: HTMLFormElement = $(".affine-cipher.decrypt form")!;
+const encryptFormEl = $(".affine-cipher.encrypt form")! as HTMLFormElement;
+const decryptFormEl = $(".affine-cipher.decrypt form")! as HTMLFormElement;
 
 const onAffineEncrypt = (e: SubmitEvent) => {
   e.preventDefault();
 
-  const plaintextEl: HTMLInputElement = $(
+  const plaintextEl = $(
     ".affine-cipher.encrypt input[name=plaintext]",
-  )!;
-  const ciphertextEl: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const ciphertextEl = $(
     ".affine-cipher.encrypt input[name=ciphertext]",
-  )!;
-  const key1El: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const key1El = $(
     ".affine-cipher.encrypt input[name=key1]",
-  )!;
-  const key2El: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const key2El = $(
     ".affine-cipher.encrypt input[name=key2]",
-  )!;
+  )! as HTMLInputElement;
 
   // Extract values & parse them
   const key1 = parseInt(key1El.value);
@@ -52,18 +52,18 @@ const onAffineEncrypt = (e: SubmitEvent) => {
 const onAffineDecrypt = (e: SubmitEvent) => {
   e.preventDefault();
 
-  const ciphertextEl: HTMLInputElement = $(
+  const ciphertextEl = $(
     ".affine-cipher.decrypt input[name=ciphertext]",
-  )!;
-  const plaintextEl: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const plaintextEl = $(
     ".affine-cipher.decrypt input[name=plaintext]",
-  )!;
-  const key1El: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const key1El = $(
     ".affine-cipher.decrypt input[name=key1]",
-  )!;
-  const key2El: HTMLInputElement = $(
+  )! as HTMLInputElement;
+  const key2El = $(
     ".affine-cipher.decrypt input[name=key2]",
-  )!;
+  )! as HTMLInputElement;
 
   // Extract values & parse them
   const key1 = parseInt(key1El.value);
