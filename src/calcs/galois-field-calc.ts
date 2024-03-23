@@ -1,4 +1,6 @@
 import { $ } from "./../main";
+import { binToDecimal } from "./../common/utils/converters";
+import { Base } from "./../common/utils/formatters";
 
 export enum GFOperation {
   Addition = "add",
@@ -67,8 +69,8 @@ const onComputeButtonClicked = (e: SubmitEvent) => {
   )! as HTMLInputElement;
 
   // Extract values & parse them
-  const A = intParser(A_El.value);
-  const B = intParser(B_El.value);
+  const A = Base.toDecimal(A_El.value);
+  const B = Base.toDecimal(B_El.value);
   const polynomial = binToDecimal(polynomialEl.value);
   const operation = operationEl.value;
 
@@ -102,28 +104,8 @@ const onComputeButtonClicked = (e: SubmitEvent) => {
   )! as HTMLParagraphElement;
 
   resultDec.innerHTML = result.toString();
-  resultHex.innerHTML = "0x" + result.toString(16);
-
-  const binary = result.toString(2);
-  resultBin.innerHTML =
-    "0b" + binary.padStart(binary.length + (4 - (binary.length % 4)), "0");
-};
-
-const intParser = (str: string) => {
-  str = str.replace(/(_|\s)+/g, "");
-  if (str.startsWith("0x")) return hexToDecimal(str);
-  if (str.startsWith("0b")) return binToDecimal(str);
-  else return parseInt(str);
-};
-
-const hexToDecimal = (hex: string) => {
-  if (hex.startsWith("0x")) hex = hex.substring(2);
-  return parseInt(hex, 16);
-};
-
-const binToDecimal = (binary: string) => {
-  if (binary.startsWith("0b")) binary = binary.substring(2);
-  return parseInt(binary, 2);
+  resultHex.innerHTML = Base.toHex(result);
+  resultBin.innerHTML = Base.toBin(result);
 };
 
 const formEl = $(".galois-field-calc form")! as HTMLFormElement;
