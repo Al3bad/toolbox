@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> shared-head}}
+  </head>
+  <body>
+    {{#> layout }}
+      <h1>AES Cryptosystem</h1>
+      <section>
+        <h2>AES Encryption</h2>
+        <div class="aes encrypt">
+          <form>
+            <!-- Input  -->
+            <div class="input-container">
+              <label class="form-label">Plaintext</label>
+              <input class="form-control" name="plaintext" />
+            </div>
+            <!-- Input  -->
+            <div class="input-container">
+              <label class="form-label" for="">Key</label>
+              <input class="form-control" name="key" />
+            </div>
+            <!-- Submit button  -->
+            <div class="container">
+              <button class="btn btn-primary" type="submit">Encrypt</button>
+            </div>
+          </form>
+          <div class="result"></div>
+          <div>
+        </div>
+      </section>
+      <hr />
+      <section>
+        <h2>AES Decryption</h2>
+        <div class="aes decrypt">
+          <form>
+            <!-- Input  -->
+            <div class="input-container">
+              <label class="form-label" for="">Ciphertext (HEX)</label>
+              <input class="form-control" name="ciphertext" />
+            </div>
+            <!-- Input  -->
+            <div class="input-container">
+              <label class="form-label" for="">Key</label>
+              <input class="form-control" name="key" />
+            </div>
+            <!-- Submit button  -->
+            <div class="container">
+              <button class="btn btn-primary" type="submit">Decrypt</button>
+            </div>
+          </form>
+          <div>
+          <div class="result"></div>
+        </div>
+      </section>
+    {{/layout}}
+    <!-- Scripts -->
+    <script type="module" src="/src/crypto/shift-cipher.ts"></script>
+  </body>
+</html>
+
