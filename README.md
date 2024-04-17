@@ -7,3 +7,14 @@
 - [x] Shift cipher - Encryption
 - [x] Affine cipher - Encryption/Decryption
 - [x] Galois Field Calculator
+- [ ] Number/ASCII Converter
+  - [ ] Decimal <-> Hex
+  - [ ] Decimal <-> Bin
+  - [ ] Decimal <-> Octal
+  - [ ] Decimal <-> ASCII
+  - [ ] Hex <-> Bin
+  - [ ] Hex <-> Octal
+  - [ ] Hex <-> ASCII
+  - [ ] Bin <-> Octal
+  - [ ] Bin <-> ASCII
+  - [ ] Octal <-> ASCII

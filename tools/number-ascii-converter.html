@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> shared-head}}
+  </head>
+  <body>
+    {{#> layout }}
+    <h1>Number/ASCII Converter</h1>
+    <section>
+      <div class="converter">
+        <form>
+          <div class="input-container">
+            <label class="form-label" for="">Input</label>
+            <textarea class="form-control" name="input" style="min-height: 100px; resize: vertical;"></textarea>
+          </div>
+        </form>
+        <div class="result"></div>
+      </div>
+    </section>
+    {{/layout}}
+    <!-- Scripts -->
+    <script
+      type="module"
+      src="/src/converters/number-ascii-converter.ts"
+    ></script>
+  </body>
+</html>
